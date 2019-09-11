@@ -11,3 +11,6 @@ do `make -j3`. there are only 3 .cpp files (4 if you count one that i ended up h
   
 # running:
 AUTH_TOK="(your token)" ./a.out
+
+# discord server:
+https://discord.gg/nCQkJjQ thanks and have fun
