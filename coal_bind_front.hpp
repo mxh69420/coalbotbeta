@@ -24,7 +24,7 @@ struct _bind_obj {
 };
 
 template <class F, class A>
-auto bind_front(F &&func, A &&arg){
+constexpr auto bind_front(F &&func, A &&arg){
 	return _bind_obj<F, A>(
 		std::forward<F>(func),
 		std::forward<A>(arg)
@@ -32,7 +32,7 @@ auto bind_front(F &&func, A &&arg){
 }
 
 template <class F, class FirstA, class... A>
-auto bind_front(F &&func, FirstA &&firstA, A&&... a){
+constexpr auto bind_front(F &&func, FirstA &&firstA, A&&... a){
 	return bind_front(
 		bind_front(
 			std::forward<F>(func),
