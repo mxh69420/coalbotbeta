@@ -10,8 +10,8 @@ namespace detail {
 
 template <class F, class A>
 struct _bind_obj {
-	F originalFunc;
-	A arg;
+	std::decay_t<F> originalFunc;
+	std::decay_t<A> arg;
 	template <class... Args>
 	auto operator()(Args&&... a){
 		return std::invoke(originalFunc, arg, std::forward<Args>(a)...);
